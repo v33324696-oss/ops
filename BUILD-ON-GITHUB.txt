@@ -1,0 +1,22 @@
+COMPILAR A ISO NO GITHUB ACTIONS
+
+1. Crie um repositório no GitHub.
+2. Extraia este ZIP no computador.
+3. Envie para a raiz do repositório o CONTEÚDO da pasta NOVA-GAMER-OS
+   (incluindo .github, config, scripts, ui e os arquivos de raiz).
+4. Faça o commit dos arquivos.
+5. No GitHub, abra a aba Actions.
+6. Escolha "Build NOVA GAMER OS ISO" e clique em "Run workflow".
+7. Quando terminar com sucesso, abra a execução e baixe o artefato
+   "NOVA-GAMER-OS-amd64-ISO" na seção Artifacts.
+
+O workflow compila o projeto em um contêiner Debian Trixie, valida a ISO e
+seu SHA256, e guarda os dois como artefato por 7 dias.
+
+ATENÇÃO:
+- O workflow precisa estar na raiz do repositório em .github/workflows/.
+- A compilação pode falhar por incompatibilidade de pacotes, mudanças nos
+  repositórios ou limite de armazenamento/tempo do runner. Consulte os logs
+  da execução em Actions.
+- A ISO ainda precisa ser testada em máquina virtual antes de instalação real.
+- A instalação pode apagar dados do disco selecionado; faça backup antes.
